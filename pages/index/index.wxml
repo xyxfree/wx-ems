@@ -1,0 +1,16 @@
+<!--pages/index/index.wxml-->
+<view class='container'>
+  <text class='title'>快递查询</text>
+  <view class='search'>
+     <text>单号:</text>
+     <input class='search'value="{{value}}" placeholder='请输入快递单号' bindinput='expressinput'></input>
+  </view>
+  <button type='primary' loading='{{loading}}' bindtap='search'>查询快递</button>
+  <scroll-view scroll-y>
+     <view class='items' wx:for="{{dataList}}">
+        <text>{{item.time}}</text>
+        <text>{{item.context}}</text>
+     </view>
+     <view class='msg' wx:if="{{!flag}}">请求失败啦</view>
+  </scroll-view>
+</view>
